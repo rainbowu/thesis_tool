@@ -9,14 +9,21 @@
 <link rel="stylesheet" href="css/basic.css" type="text/css" media="screen" />
 </head>
 <body> 
-	<p class="large"> How to decrypt LINE database </p>
+	<p class="large"> Decryption Tool for LINE database(Setting and Channel) </p>
 	<form id="decryptData">
-		<label for="decryptDate"> What do you want decrypt? </label>
-		<input type="text" id="enigma" name="enigma" />
+		<label for="decryptDate"> Encrypted text: </label>
+		<input type="text" id="enigma" name="enigma" /> 
+		<br>
+		<label for="decryptDate"> Android Id: </label>
+		<input type="text" id="Android_id" name="android_id" />
+		<br>
 		<input type="submit" />
 	</form>
+	<hr />
+	<label> Result: </label>
 	<p id ="displayData" />
+	<hr />	
 	<p class="small"> Here is how it works </p>
-	
+	<img src="images/designs.png" border=0 width="480px" height="120px" alt="Image Not found"/>
 </body>
 </html>

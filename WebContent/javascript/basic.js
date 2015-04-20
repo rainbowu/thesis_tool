@@ -9,10 +9,10 @@ $(document).ready(function(){
 			data: $('#decryptData').serialize(),
 			success: function(data){
 				if(data.isValid){
-					$('#displayData').html('Decrypted Info is: ' + data.enigma);
+					$('#displayData').html('Decrypted Info is: ' + data.decryped_word);
 					$('#displayData').slideDown(500);
 				}else
-					alert('please enter a valid username!');
+					alert('please enter valid text & id!');
 			}
 		});
 		
