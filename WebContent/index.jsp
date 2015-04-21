@@ -11,6 +11,12 @@
 <body> 
 	<p class="large"> Decryption Tool for LINE database(Setting and Channel) </p>
 	<form id="decryptData">
+		<label for="decryptDate"> Table: </label>
+		<select id="table_type" name="table_type">
+　			<option value="setting">setting</option>
+　			<option value="channel">channel</option>
+		</select>
+		<br>
 		<label for="decryptDate"> Encrypted text: </label>
 		<input type="text" id="enigma" name="enigma" /> 
 		<br>

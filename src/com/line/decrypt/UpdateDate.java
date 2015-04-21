@@ -43,6 +43,7 @@ public class UpdateDate extends HttpServlet{
 		boolean isValid = false;
 		String enigma = request.getParameter("enigma");
 		String android_id = request.getParameter("android_id");
+		String type = request.getParameter("table_type");
 		
 		String decryped_word = null;
 		if(enigma != null && enigma.trim().length() != 0 ){
@@ -54,7 +55,7 @@ public class UpdateDate extends HttpServlet{
 		
 		try {
 			
-			decryped_word = decipher.decrypt_aes(enigma , android_id);
+			decryped_word = decipher.decrypt_aes(enigma , android_id , type);
 			System.out.print(decryped_word);
 			
 			

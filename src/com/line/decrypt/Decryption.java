@@ -34,14 +34,17 @@ public class Decryption {
 	
 	public static final long  magic_number_channels = 13637594 ;
 	
-	public String decrypt_aes(String encryptedFile, String android_id) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException { 	
+	public String decrypt_aes(String encryptedFile, String android_id , String type) throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, InvalidAlgorithmParameterException, UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException { 	
 		
 		byte[] encryptedBytes = base64.decode(encryptedFile);
+		SecretKeySpec secretKey = null;
+		
+		if ( type.equals("channel") )
 		// channel key:
-		SecretKeySpec secretKey = new SecretKeySpec( generate_key_channel(magic_number_channels, android_id), "AES");
-	
+			secretKey = new SecretKeySpec( generate_key_channel(magic_number_channels, android_id), "AES");
+		else if (type.equals("setting") )
 		// setting key
-//		SecretKeySpec secretKey = new SecretKeySpec( generate_key_utility(magic_number_setting, android_id), "AES");
+			secretKey = new SecretKeySpec( generate_key_utility(magic_number_setting, android_id), "AES");
 	
 		
 		Security.addProvider(new BouncyCastleProvider());
